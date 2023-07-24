@@ -6,3 +6,7 @@ JUEGOS [
 ]
 Chat con sockets 
 Algo con el Dolar(" pensar mejor que hacer ")
+Pokedex por generaciones 
+Todo list 
+
+## Googlear vercer y hosting de github para frontend
