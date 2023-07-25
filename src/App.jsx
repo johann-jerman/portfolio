@@ -1,3 +1,5 @@
+import { Route, Routes,  } from "react-router-dom"
+import MemoTest from "./juegos/MemoTest"
 
 function App() {
   return (
@@ -6,6 +8,11 @@ function App() {
         Hello world!
       </h1>
       
+      <Routes>
+        {/* <Route path="*" element={</>} /> */}
+        {/* <Route path="*" element={<MemoTest/>} /> */}
+        <Route path="/memotest" element={<MemoTest/>} />
+      </Routes>
     </>
   )
 }
