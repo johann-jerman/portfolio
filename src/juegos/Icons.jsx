@@ -16,7 +16,7 @@ export let icons = [
     <i className="fa-brands fa-bootstrap text-3xl"></i>,
     <i className="fa-solid fa-code text-3xl"></i>,
     <i className="fa-brands fa-swift text-3xl"></i>,
-
+    
 
 
 
