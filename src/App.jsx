@@ -1,5 +1,5 @@
 import { Route, Routes,  } from "react-router-dom"
-import MemoTest from "./juegos/MemoTest"
+import MemoTest from "./juegos/memotest/MemoTest.jsx"
 
 function App() {
   return (
