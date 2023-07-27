@@ -17,6 +17,14 @@ export default function MemoTest() {
     }
   }
 
+  const handle = (e) => {
+    let {target} = e
+    let {children} = target
+    children[0].classList.add("hidden")
+    console.log(target.id);
+
+  }
+
   return (
     <>
       <button onClick={startPlay}>{state}</button>
@@ -25,15 +33,15 @@ export default function MemoTest() {
           token.map( (icon , i) => {
             return(
               
-              <div key={i} className='bg-red-100 m-2 rounded relative'>
+              <div id={i} key={i} onClick={handle} className='bg-red-100 m-2 rounded relative'>
                 
-                <div id={i} className='
+                <div className='
                   bg-gray-100 absolute
                   h-20 w-20 m-5 p-5 space-y-0
                   border-black-600 border-2 rounded-full
                   flex justify-center items-center space-x-0.1
                   '
-                ><i class="fa-solid fa-question text-3xl absolute posicion"></i></div>
+                ><i className="fa-solid fa-question text-3xl absolute posicion"></i></div>
                 
                 <div className='
                   bg-gray-100 
