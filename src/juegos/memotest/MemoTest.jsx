@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { icons } from "./Icons"; 
 import { randomArray } from './Utils';
+import './card.css'
 
 export default function MemoTest() {
   let [state, setState] = useState("Empezar a Jugar!!!")
@@ -13,7 +14,6 @@ export default function MemoTest() {
       setToken(
         randomArray(token)
       )
-
     }
   }
 
@@ -24,14 +24,26 @@ export default function MemoTest() {
         {
           token.map( (icon , i) => {
             return(
-              <div key={i} className='bg-red-100 m-2 rounded'>
-                <div className='
+              
+              <div key={i} className='bg-red-100 m-2 rounded relative'>
+                
+                <div id={i} className='
+                  bg-gray-100 absolute
                   h-20 w-20 m-5 p-5 space-y-0
                   border-black-600 border-2 rounded-full
-                  bg-gray-100
-                  flex justify-center items-center space-x-0.1'
-                  > {icon} 
+                  flex justify-center items-center space-x-0.1
+                  '
+                ><i class="fa-solid fa-question text-3xl absolute posicion"></i></div>
+                
+                <div className='
+                  bg-gray-100 
+                  h-20 w-20 m-5 p-5 space-y-0
+                  border-black-600 border-2 rounded-full
+                  flex justify-center items-center space-x-0.1
+                  '
+                > {icon} 
                 </div>
+
               </div>
               )
             })
