@@ -5,3 +5,23 @@ export const randomArray = (array) => {
     }
     return array
 }
+
+
+
+export const compare = (johann) =>{
+
+    let elementToCompare = []
+    if (elementToCompare.length < 2) {
+        elementToCompare.push(johann)
+    }
+    if (elementToCompare.length == 2 &&  elementToCompare[0] != elementToCompare[1]) {
+        elementToCompare[0].children[0].classList.remove('hidden')
+        elementToCompare[1].children[0].classList.remove('hidden')
+        elementToCompare = []
+    }
+
+}
+
+
+
+               

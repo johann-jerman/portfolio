@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { icons } from "./Icons"; 
-import { randomArray } from './Utils';
+import { compare, randomArray } from './Utils';
 import './card.css'
 
 export default function MemoTest() {
@@ -18,12 +18,18 @@ export default function MemoTest() {
   }
 
   const handle = (e) => {
+    if(state == "Empezar a Jugar!!!" ) return null ;
     let {target} = e
     let {children} = target
-    children[0].classList.add("hidden")
-    console.log(target.id);
-
+    target.id == 'answer' ? target.classList.add('hidden'): null   
+    target.id && children ? children[0].classList.add("hidden"): null ;  
+    if (target.id && children[0].id == 'answer') {
+      
+      compare(target)
+    }
+    
   }
+
 
   return (
     <>
@@ -35,7 +41,7 @@ export default function MemoTest() {
               
               <div id={i} key={i} onClick={handle} className='bg-red-100 m-2 rounded relative'>
                 
-                <div className='
+                <div id='answer' className='
                   bg-gray-100 absolute
                   h-20 w-20 m-5 p-5 space-y-0
                   border-black-600 border-2 rounded-full
@@ -59,5 +65,5 @@ export default function MemoTest() {
       </main>
     </>
     )
-}
+  }
 
