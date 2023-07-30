@@ -33,31 +33,26 @@ export default function MemoTest() {
 
   return (
     <>
-      <button onClick={startPlay}>{state}</button>
-      <main className='flex flex-wrap max-w-7xl m-auto  '>
+        <button onClick={startPlay}>{state}</button>
+          <main className='grid grid-cols-8 grid-rows-6 p-10 m-10 justify-items-center'>
         {
           token.map( (icon , i) => {
             return(
               
-              <div id={i} key={i} onClick={handle} className='bg-red-100 m-2 rounded relative'>
-                
-                <div id='answer' className='
-                  bg-gray-100 absolute
-                  h-20 w-20 m-5 p-5 space-y-0
-                  border-black-600 border-2 rounded-full
-                  flex justify-center items-center space-x-0.1
-                  '
-                ><i className="fa-solid fa-question text-3xl absolute posicion"></i></div>
-                
-                <div className='
-                  bg-gray-100 
-                  h-20 w-20 m-5 p-5 space-y-0
-                  border-black-600 border-2 rounded-full
-                  flex justify-center items-center space-x-0.1
-                  '
-                > {icon} 
-                </div>
-
+              <div id={i} key={i} onClick={handle} className='bg-violet-300 m-4 p-4 rounded'>
+                  
+                  <div id='answer' className='
+                    bg-violet-300 absolute
+                    h-20 w-20 m-6 p-5
+                    flex justify-center items-center 
+                    fa-solid fa-question text-3xl'>
+                  </div>
+                  <div className='
+                    bg-violet-300 
+                    h-20 w-20 m-6 p-5
+                    flex justify-center items-center'> 
+                    {icon} 
+                  </div>
               </div>
               )
             })
