@@ -71,7 +71,10 @@ export default function MemoTest() {
 
   return (
     <>
-        <button onClick={startPlay}>{state}</button>
+
+        <div className='flex justify-center'>
+        <button id='boton' onClick={startPlay}>{state}</button>
+        </div>
           <main className='grid grid-cols-8 grid-rows-6 p-10 m-10 justify-items-center'>
         {
           token.map( (icon , i) => {
@@ -82,13 +85,13 @@ export default function MemoTest() {
                   <div className='
                     answer
                     bg-violet-300 absolute
-                    h-20 w-20 m-6 p-5
+                    h-20 w-20 m-6
                     flex justify-center items-center 
-                    fa-solid fa-question text-3xl'>
+                    fa-solid fa-question text-2xl'>
                   </div>
                   <div className='
                     bg-violet-300 
-                    h-20 w-20 m-6 p-5
+                    h-20 w-20 m-6
                     flex justify-center items-center'> 
                     {icon} 
                   </div>

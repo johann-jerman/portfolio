@@ -1,11 +1,11 @@
 import { Route, Routes,  } from "react-router-dom"
 import MemoTest from "./juegos/memotest/MemoTest.jsx"
+import Home from './Home.jsx'
 
 function App() {
   return (
     <>
-      <h1 className="text-9xl font-bold underline">
-      </h1>
+     <Home></Home>
       
       <Routes>
         {/* <Route path="*" element={</>} /> */}
