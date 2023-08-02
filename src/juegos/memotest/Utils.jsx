@@ -24,6 +24,12 @@ export const compare = (johann) =>{
 
 }
 
+export const hidden = (icon)=> {
+    icon.forEach(element => {
+        element.children[0].classList.remove('hidden')
+    });
+}
+
 
 
                

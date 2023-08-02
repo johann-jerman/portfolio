@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { icons } from "./Icons"; 
-import { randomArray } from './Utils';
+import { hidden, randomArray } from './Utils';
 import './card.css'
 
 export default function MemoTest() {
@@ -62,8 +62,13 @@ export default function MemoTest() {
         elementToWin.push(elementToCompare[1])
         elementToCompare = []
     }
+    
     if (elementToWin.length == 32) {
-      location.reload();
+      let reroll = document.querySelectorAll(".padre")
+      setState("Empezar a Jugar!!!");
+      hidden(reroll)
+      setToken(icons)
+      elementToWin = 0;
     }
 
     return null;
