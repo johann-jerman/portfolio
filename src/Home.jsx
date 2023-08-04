@@ -14,7 +14,7 @@ const navigation = [
   { name: 'Team', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
-  { name: 'Reports', href: '#', current: false },
+  { name: 'Pokedex', href: '/pokedex', current: false },
   { name: 'Memotest', href: '/memotest', current: false },
 ]
 const userNavigation = [

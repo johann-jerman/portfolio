@@ -1,6 +1,7 @@
 import { Route, Routes,  } from "react-router-dom"
 import MemoTest from "./juegos/memotest/MemoTest.jsx"
 import Home from './Home.jsx'
+import { Pokedex } from "./pokedex/Pokedex.jsx"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         {/* <Route path="*" element={</>} /> */}
         {/* <Route path="*" element={<MemoTest/>} /> */}
         <Route path="/memotest" element={<MemoTest/>} />
+        <Route path="/pokedex" element={<Pokedex/>} />
       </Routes>
     </>
   )
