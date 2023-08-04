@@ -80,7 +80,11 @@ export default function MemoTest() {
         <div className='flex justify-center'>
         <button id='boton' onClick={startPlay}>{state}</button>
         </div>
-          <main className='grid grid-cols-8 grid-rows-6 p-10 m-10 justify-items-center'>
+          <main className='
+            flex flex-wrap
+            p-5 m-5 
+            justify-center items-center
+          '>
         {
           token.map( (icon , i) => {
             return(
