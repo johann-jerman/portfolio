@@ -6,7 +6,8 @@ import { Pokedex } from "./pokedex/Pokedex.jsx"
 function App() {
   return (
     <>
-     <Home></Home>
+     <Home>
+     </Home>
       
       <Routes>
         {/* <Route path="*" element={</>} /> */}
