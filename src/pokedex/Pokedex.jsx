@@ -71,6 +71,13 @@ export function Pokedex() {
     let url = singlePokemonApi + e;
     let req = await fetch(url);
     let res = await req.json();
+
+    let reqEntry = await fetch(res.species.url);
+    let resEntry = await reqEntry.json();
+    let entry = resEntry.flavor_text_entries.find( (entry) => {
+      return entry.language.name === "es"
+    })
+    res.entry = entry.flavor_text
     setPokemon(res);
     setMainWidth("w-5/6")
   };
@@ -152,24 +159,33 @@ export function Pokedex() {
               <img className="m-auto relative" src={pokemon?.sprites?.versions['generation-v']["black-white"].animated.front_default} alt="" /> :
               <img className="" src={pokemon?.sprites?.front_default} alt="" />
             }
-            <p className="text-center">N° {pokemon.id}</p>
-            <p>Tamaño: {pokemon.height}</p>
-            <p>Peso: {pokemon.weight}</p>
-            <p>Tipos:</p>
-            <div>
+            <p className="text-center my-2">N° {pokemon.id}</p>
+            <p className="text-center">Descripcion:</p>
+            <p className="text-center p-2 m-2 bg-b rounded">{pokemon.entry}</p>
+            <div className="flex justify-around">
+              <p>Altura</p>
+              <p>Peso</p>
+            </div>
+            <div className="flex justify-around">
+              <p className="bg-b w-1/4 text-center rounded">{pokemon.height}</p>
+              <p className="bg-b w-1/4 text-center rounded">{pokemon.weight}</p>
+            </div>
+            <p className="text-center my-2">Tipos:</p>
+            <div className="flex justify-around">
             {
               pokemon.types?.map((type, i)=>{
                 return(
-                  <p key={i} className={type.type.name}>{type.type.name}</p>
+                  <p key={i} className={type.type.name + " w-1/3 rounded text-center mx-5"}>{type.type.name}</p>
                   )
                 })
               }
             </div>
-            <div>
+            <p className="text-center my-2">Abilidades:</p>
+            <div className="flex justify-around">
             {
               pokemon.abilities?.map((ab, i)=>{
                 return(
-                  <p key={i}>{ab.ability.name}</p>
+                  <p key={i} className="w-1/3 rounded mx-5 bg-b text-center">{ab.ability.name}</p>
                   )
                 })
               }
