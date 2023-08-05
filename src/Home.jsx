@@ -10,10 +10,10 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  // { name: 'Dashboard', href: '#', current: true },
+  // { name: 'Team', href: '#', current: false },
+  // { name: 'Projects', href: '#', current: false },
+  // { name: 'Calendar', href: '#', current: false },
   { name: 'Pokedex', href: '/pokedex', current: false },
   { name: 'Memotest', href: '/memotest', current: false },
 ]
@@ -77,17 +77,17 @@ export default function Home() {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
+                      {/* <button
                         type="button"
                         className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       >
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
+                      </button> */}
 
                       {/* Profile dropdown */}
-                      <Menu as="div" className="relative ml-3">
+                      {/* <Menu as="div" className="relative ml-3">
                         <div>
                           <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="absolute -inset-1.5" />
@@ -131,7 +131,7 @@ export default function Home() {
                             ))}
                           </Menu.Items>
                         </Transition>
-                      </Menu>
+                      </Menu> */}
                     </div>
                   </div>
                   <div className="-mr-2 flex md:hidden">
