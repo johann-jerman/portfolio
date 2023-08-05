@@ -12,8 +12,8 @@ export function Pokedex() {
   let [pokemon, setPokemon] = useState("oculto");
   let [api, setApi] = useState(pokeApi);
   let [mainWidth, setMainWidth] = useState("w-auto");
-  let [pokemonImage, setPokemonImage] = useState();
-  let [shyni, setShyni] = useState(false);
+  let [pokemonImage, setPokemonImage] = useState({image: "", shyni: false});
+  // let [shyni, setShyni] = useState(0);
 
   useEffect(() => {
     requestPokedex(api);
@@ -85,7 +85,7 @@ export function Pokedex() {
     });
     res.entry = entry.flavor_text;
 
-    setPokemonImage(selectImage(res))
+    setPokemonImage(selectImage(res, pokemonImage.shyni))
     setPokemon(res);
     setMainWidth("w-5/6");
   };
@@ -96,8 +96,12 @@ export function Pokedex() {
   }
 
   const handleShiny = ()=>{
-    shyni ? setShyni(false) : setShyni(true);
-    setPokemonImage(selectImage(pokemon, shyni))
+    setPokemonImage(previousImage => ({
+      ...previousImage,
+      shyni: !previousImage.shyni
+    }));
+  
+    setPokemonImage(selectImage(pokemon, !pokemonImage.shyni));
   }
   
 
@@ -188,9 +192,9 @@ export function Pokedex() {
             bg-b text-red-400
             flex items-center justify-center"
               ></div>
-              <img className="m-auto " src={pokemonImage} alt={pokemon.name} />
+              <img className="m-auto " src={pokemonImage.image} alt={pokemon.name} />
               <div
-              onClick={()=> handleShiny()}
+              onClick={handleShiny}
                 className="
             fa-solid fa-star 
             absolute right-3 top-3 

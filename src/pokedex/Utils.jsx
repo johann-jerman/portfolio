@@ -74,19 +74,30 @@ export const selectImage = (availableImage, shyni) => {
   let shyniAnimated = availableImage.sprites?.versions["generation-v"]["black-white"]
   .animated?.front_shiny 
 
-  console.log(availableImage.sprites?.versions["generation-v"]["black-white"]
-  .animated);
   if (shyniAnimated && shyni) {
-   return shyniAnimated
+   return {
+    image: shyniAnimated,
+    shyni: true
+   }
+   
   } 
-  if (!shyniAnimated && shyni ) {
-    return availableImage?.sprites?.front_shiny
+  if (!shyniAnimated && shyni) {
+    return {
+      image:  availableImage?.sprites?.front_shiny,
+      shyni: true
+    }
   }
   
   if (animated && !shyni) {
-    return animated
+    return {
+      image:  animated,
+      shyni: false
+    }
   }else{
-    return availableImage?.sprites?.front_default
+    return {
+      image:  availableImage?.sprites?.front_default,
+      shyni: false
+    }
   }
 
 }
