@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./pokedex.css";
-import { gen, genButton } from "./Utils";
+import { gen, genButton, selectImage } from "./Utils";
 
 let limit = 151;
 let offset = 0;
@@ -11,7 +11,9 @@ export function Pokedex() {
   let [pokedex, setPokedex] = useState([]);
   let [pokemon, setPokemon] = useState("oculto");
   let [api, setApi] = useState(pokeApi);
-  let [mainWidth, setMainWidth] = useState("w-auto")
+  let [mainWidth, setMainWidth] = useState("w-auto");
+  let [pokemonImage, setPokemonImage] = useState();
+  let [shyni, setShyni] = useState(false);
 
   useEffect(() => {
     requestPokedex(api);
@@ -61,6 +63,10 @@ export function Pokedex() {
         pokeApi = `https://pokeapi.co/api/v2/pokemon?limit=${gen.sol.limit}&offset=${gen.sol.offset}`;
         setApi(pokeApi);
         break;
+      case "Todos":
+        pokeApi = `https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0`;
+        setApi(pokeApi);
+        break;
 
       default:
         break;
@@ -74,16 +80,30 @@ export function Pokedex() {
 
     let reqEntry = await fetch(res.species.url);
     let resEntry = await reqEntry.json();
-    let entry = resEntry.flavor_text_entries.find( (entry) => {
-      return entry.language.name === "es"
-    })
-    res.entry = entry.flavor_text
+    let entry = resEntry.flavor_text_entries.find((entry) => {
+      return entry.language.name === "es";
+    });
+    res.entry = entry.flavor_text;
+
+    setPokemonImage(selectImage(res))
     setPokemon(res);
-    setMainWidth("w-5/6")
+    setMainWidth("w-5/6");
   };
+
+  const hiddenPokemon = () => {
+    setPokemon("oculto");
+    setMainWidth("w-auto")
+  }
+
+  const handleShiny = ()=>{
+    shyni ? setShyni(false) : setShyni(true);
+    setPokemonImage(selectImage(pokemon, shyni))
+  }
+  
 
   return (
     <main className="">
+      {/* Seccion generaciones de pokemon */}
       <section className="flex justify-center m-2 my-10 flex-wrap">
         {genButton?.map((button, i) => {
           return (
@@ -101,15 +121,18 @@ export function Pokedex() {
           );
         })}
       </section>
+      {/* Seccion bateria pokedex */}
       {pokedex.length == 0 && (
         <h1 className="m-50 text-center text-2xl">
           Cargando Bateria De La Pokedex...
         </h1>
       )}
 
-      {/* {console.log(pokemon)} */}
+      {/* Seccion pokedex */}
       <div className="flex ">
-        <section className={"flex flex-wrap justify-center items-center " + mainWidth}>
+        <section
+          className={"flex flex-wrap justify-center items-center " + mainWidth}
+        >
           {pokedex?.map((pokemon) => {
             return (
               <article
@@ -147,50 +170,78 @@ export function Pokedex() {
             );
           })}
         </section>
+        
+        {/* Seccion dereche de pokemon */}
         {pokemon == "oculto" && <></>}
         {pokemon != "oculto" && (
-          <section className="w-1/6 h-1/2
+          <section
+            className="w-1/6 h-1/2
           rounded border border-black-800 border-solid
           hover:shadow-md shadow-black transition duration-300
-          bg-white fixed right-0">
-          <aside className="h-1/2 m-1 bg-white">
-            {
-              pokemon?.sprites?.versions['generation-v']["black-white"].animated.front_default ?
-              <img className="m-auto relative" src={pokemon?.sprites?.versions['generation-v']["black-white"].animated.front_default} alt="" /> :
-              <img className="" src={pokemon?.sprites?.front_default} alt="" />
-            }
-            <p className="text-center my-2">N° {pokemon.id}</p>
-            <p className="text-center">Descripcion:</p>
-            <p className="text-center p-2 m-2 bg-b rounded">{pokemon.entry}</p>
-            <div className="flex justify-around">
-              <p>Altura</p>
-              <p>Peso</p>
-            </div>
-            <div className="flex justify-around">
-              <p className="bg-b w-1/4 text-center rounded">{pokemon.height}</p>
-              <p className="bg-b w-1/4 text-center rounded">{pokemon.weight}</p>
-            </div>
-            <p className="text-center my-2">Tipos:</p>
-            <div className="flex justify-around">
-            {
-              pokemon.types?.map((type, i)=>{
-                return(
-                  <p key={i} className={type.type.name + " w-1/3 rounded text-center mx-5"}>{type.type.name}</p>
-                  )
-                })
-              }
-            </div>
-            <p className="text-center my-2">Abilidades:</p>
-            <div className="flex justify-around">
-            {
-              pokemon.abilities?.map((ab, i)=>{
-                return(
-                  <p key={i} className="w-1/3 rounded mx-5 bg-b text-center">{ab.ability.name}</p>
-                  )
-                })
-              }
-            </div>
-          </aside>
+          bg-white fixed right-0"
+          >
+            <aside className="h-1/2 m-1 bg-white">
+              <div
+              onClick={hiddenPokemon}
+                className="fa-regular fa-circle-xmark absolute left-3 top-3 
+            w-6 h-6 rounded-full 
+            bg-b text-red-400
+            flex items-center justify-center"
+              ></div>
+              <img className="m-auto " src={pokemonImage} alt={pokemon.name} />
+              <div
+              onClick={()=> handleShiny()}
+                className="
+            fa-solid fa-star 
+            absolute right-3 top-3 
+            w-6 h-6 rounded-full 
+            bg-yellow-400 text-orange-400
+            flex items-center justify-center
+            "
+              ></div>
+              <p className="text-center text-xs">N° {pokemon.id}</p>
+              <p className="text-center">Descripcion:</p>
+              <p className="text-center p-2 m-2 bg-b rounded">
+                {pokemon.entry}
+              </p>
+              <div className="flex justify-around">
+                <p>Altura</p>
+                <p>Peso</p>
+              </div>
+              <div className="flex justify-around">
+                <p className="bg-b w-1/4 text-center rounded">
+                  {pokemon.height}
+                </p>
+                <p className="bg-b w-1/4 text-center rounded">
+                  {pokemon.weight}
+                </p>
+              </div>
+              <p className="text-center my-2">Tipos:</p>
+              <div className="flex justify-around">
+                {pokemon.types?.map((type, i) => {
+                  return (
+                    <p
+                      key={i}
+                      className={
+                        type.type.name + " w-1/3 rounded text-center mx-5"
+                      }
+                    >
+                      {type.type.name}
+                    </p>
+                  );
+                })}
+              </div>
+              <p className="text-center my-2">Abilidades:</p>
+              <div className="flex justify-around">
+                {pokemon.abilities?.map((ab, i) => {
+                  return (
+                    <p key={i} className="w-1/3 rounded mx-5 bg-b text-center">
+                      {ab.ability.name}
+                    </p>
+                  );
+                })}
+              </div>
+            </aside>
           </section>
         )}
       </div>

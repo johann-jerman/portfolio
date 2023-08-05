@@ -61,5 +61,32 @@ export const genButton = [
     name: "Sol y Luna",
     color: "electric",
   },
+  {
+    name: "Todos",
+    color: "normal",
+  },
 ];
 
+export const selectImage = (availableImage, shyni) => {
+  let animated = availableImage.sprites?.versions["generation-v"]["black-white"]
+  .animated?.front_default 
+
+  let shyniAnimated = availableImage.sprites?.versions["generation-v"]["black-white"]
+  .animated?.front_shiny 
+
+  console.log(availableImage.sprites?.versions["generation-v"]["black-white"]
+  .animated);
+  if (shyniAnimated && shyni) {
+   return shyniAnimated
+  } 
+  if (!shyniAnimated && shyni ) {
+    return availableImage?.sprites?.front_shiny
+  }
+  
+  if (animated && !shyni) {
+    return animated
+  }else{
+    return availableImage?.sprites?.front_default
+  }
+
+}
