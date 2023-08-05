@@ -13,7 +13,7 @@ export function Pokedex() {
   let [api, setApi] = useState(pokeApi);
   let [mainWidth, setMainWidth] = useState("w-auto");
   let [pokemonImage, setPokemonImage] = useState({image: "", shyni: false});
-  // let [shyni, setShyni] = useState(0);
+  let [filtro, setFiltro] = useState("");
 
   useEffect(() => {
     requestPokedex(api);
@@ -84,8 +84,8 @@ export function Pokedex() {
       return entry.language.name === "es";
     });
     res.entry = entry.flavor_text;
-
-    setPokemonImage(selectImage(res, pokemonImage.shyni))
+    
+    setPokemonImage(selectImage(res, pokemonImage.shyni? !pokemonImage.shyni : pokemonImage.shyni))
     setPokemon(res);
     setMainWidth("w-5/6");
   };
@@ -104,10 +104,35 @@ export function Pokedex() {
     setPokemonImage(selectImage(pokemon, !pokemonImage.shyni));
   }
   
+  const handleInputChange = (e) => {
+    setFiltro(e.target.value)
+    let newPokedex = pokedex.filter(pokemon => {
+      if(pokemon.name.includes(e.target.value)){
+        return pokemon
+      }
+    })
+    setPokedex(newPokedex)
+  }
+  const erese = (e)=>{
+      if(e.keyCode == 8){
+        setFiltro("")
+        requestPokedex(pokeApi)
+      }
+  }
 
   return (
     <main className="">
       {/* Seccion generaciones de pokemon */}
+      <div className="flex justify-center w-">
+      <input
+        type="text"
+        value={filtro}
+        onChange={handleInputChange}
+        onKeyUp={erese}
+        className="border rounded px-2 py-1 w-1/2 h-10"
+        placeholder="Pokemon yo te elijo..."
+      />
+      </div>
       <section className="flex justify-center m-2 my-10 flex-wrap">
         {genButton?.map((button, i) => {
           return (

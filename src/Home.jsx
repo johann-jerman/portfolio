@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const user = {
   name: 'Tom Cook',
   email: 'tom@example.com',
-  imageUrl:''}
+  imageUrl:'https://pbs.twimg.com/media/EWvu6p_XQAAAdM7?format=jpg&name=small'}
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Team', href: '#', current: false },
@@ -90,7 +90,7 @@ export default function Home() {
                           <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="absolute -inset-1.5" />
                             <span className="sr-only">Open user menu</span>
-                            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                            <img className="h-8 w-8 object-cover rounded-full" src={user.imageUrl} alt="" />
                           </Menu.Button>
                         </div>
                         <Transition
