@@ -11,6 +11,7 @@ export function Pokedex() {
   let [pokedex, setPokedex] = useState([]);
   let [pokemon, setPokemon] = useState("oculto");
   let [api, setApi] = useState(pokeApi);
+  let [mainWidth, setMainWidth] = useState("w-auto")
 
   useEffect(() => {
     requestPokedex(api);
@@ -71,11 +72,12 @@ export function Pokedex() {
     let req = await fetch(url);
     let res = await req.json();
     setPokemon(res);
+    setMainWidth("w-5/6")
   };
 
   return (
     <main className="">
-      <section className="flex justify-center m-2 my-10 flex-nowrap">
+      <section className="flex justify-center m-2 my-10 flex-wrap">
         {genButton?.map((button, i) => {
           return (
             <div
@@ -98,9 +100,9 @@ export function Pokedex() {
         </h1>
       )}
 
-      {console.log(pokemon)}
+      {/* {console.log(pokemon)} */}
       <div className="flex ">
-        <section className="flex flex-wrap justify-center items-center">
+        <section className={"flex flex-wrap justify-center items-center " + mainWidth}>
           {pokedex?.map((pokemon) => {
             return (
               <article
@@ -140,15 +142,17 @@ export function Pokedex() {
         </section>
         {pokemon == "oculto" && <></>}
         {pokemon != "oculto" && (
-          <section className="cartita h-1/2 bg-white relative">
-            <article className="overflow-hidden">
+          <section className="w-1/6 h-1/2
+          rounded border border-black-800 border-solid
+          hover:shadow-md shadow-black transition duration-300
+          bg-white fixed right-0">
           <aside className="h-1/2 m-1 bg-white">
             {
               pokemon?.sprites?.versions['generation-v']["black-white"].animated.front_default ?
-              <img src={pokemon?.sprites?.versions['generation-v']["black-white"].animated.front_default} alt="" /> :
-              <img src={pokemon?.sprites?.front_default} alt="" />
+              <img className="m-auto relative" src={pokemon?.sprites?.versions['generation-v']["black-white"].animated.front_default} alt="" /> :
+              <img className="" src={pokemon?.sprites?.front_default} alt="" />
             }
-            <p>N° {pokemon.id}</p>
+            <p className="text-center">N° {pokemon.id}</p>
             <p>Tamaño: {pokemon.height}</p>
             <p>Peso: {pokemon.weight}</p>
             <p>Tipos:</p>
@@ -171,7 +175,6 @@ export function Pokedex() {
               }
             </div>
           </aside>
-        </article>
           </section>
         )}
       </div>

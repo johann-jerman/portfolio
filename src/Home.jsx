@@ -108,15 +108,24 @@ export default function Home() {
                             {userNavigation.map((item) => (
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
-                                  <a
-                                    href={item.href}
+                                  <Link
+                                    to={item.href}
                                     className={classNames(
                                       active ? 'bg-gray-100' : '',
                                       'block px-4 py-2 text-sm text-gray-700'
                                     )}
                                   >
                                     {item.name}
-                                  </a>
+                                  </Link>
+                                  // <a
+                                  //   href={item.href}
+                                  //   className={classNames(
+                                  //     active ? 'bg-gray-100' : '',
+                                  //     'block px-4 py-2 text-sm text-gray-700'
+                                  //   )}
+                                  // >
+                                  //   {item.name}
+                                  // </a>
                                 )}
                               </Menu.Item>
                             ))}
