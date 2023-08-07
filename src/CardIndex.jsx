@@ -102,10 +102,8 @@ export function CardIndex() {
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full px-6">
                     <p className="mb-4 font-light leading-relaxed text-gray-600 dark:text-gray-400">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Proin turpis orci, maximus sed purus a, cursus scelerisque
-                      purus. Morbi molestie, odio at sagittis rhoncus, felis
-                      massa iaculis mi, quis molestie erat ipsum vel risus.
+                    Actualmente incursionando en el hermoso mundo IT. 
+                    Trabajando y aprendiendo arduamente para poder cumplir, hoy, mi objetivo principal que es ser desarrollador web.
                     </p>
                   </div>
                 </div>
@@ -211,10 +209,7 @@ export function CardIndex() {
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full px-6">
                     <p className="mb-4 font-light leading-relaxed text-gray-600 dark:text-gray-400">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Proin turpis orci, maximus sed purus a, cursus scelerisque
-                      purus. Morbi molestie, odio at sagittis rhoncus, felis
-                      massa iaculis mi, quis molestie erat ipsum vel risus.
+                    Aquí un entusiasta Desarrollador Web con ganas de afrontar nuevos desafíos, al que le gustaría formar parte de un equipo. Estoy entusiasmado por comenzar mi carrera profesional y contribuir con mi granito de arena.
                     </p>
                   </div>
                 </div>
