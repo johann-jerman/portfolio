@@ -4,14 +4,24 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        'a-o': '#136365',
-        'a-c': '#1b8d90',
-        'v': '#4701a3',
-        'r-o': '#a99ec2',
-        'r-cr': '#e4cedd',
-        'b': '#f5f5ee',
-        'g': '#a0bece',
-      }
+        "a-o": "#136365",
+        "a-c": "#1b8d90",
+        v: "#4701a3",
+        "r-o": "#a99ec2",
+        "r-cr": "#e4cedd",
+        b: "#f5f5ee",
+        g: "#a0bece",
+      },
+      textColor: {
+        "a-o": "#136365",
+        "a-c": "#1b8d90",
+        v: "#4701a3",
+        "r-o": "#a99ec2",
+        "r-cr": "#e4cedd",
+        b: "#f5f5ee",
+        g: "#a0bece",
+        cv: "#2c5a7d",
+      },
     },
   },
   plugins: [],
