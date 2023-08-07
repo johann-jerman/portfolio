@@ -3,7 +3,7 @@ import React from "react";
 export function CardIndex() {
   return (
     <>
-      <div className="container my-12 mx-auto px-4 md:px-12">
+      <div className="container my-18 my mx-auto px-4 md:px-12">
         <div className="flex flex-wrap place-content-around -mx-1 lg:-mx-4">
           <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
             <article className="overflow-hidden rounded-lg shadow-lg">
@@ -28,7 +28,7 @@ export function CardIndex() {
                         className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
                         href="https://github.com/johann-jerman"
                         rel="noopener"
-                        aria-label="Ariel Cerda on Github"
+                        aria-label="Johann Jerman on Github"
                         target="_blank"
                       >
                         <svg
@@ -45,7 +45,7 @@ export function CardIndex() {
                         className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
                         href="https://www.linkedin.com/in/johannjerman/"
                         rel="noopener"
-                        aria-label="Ariel Cerda on Linkedin"
+                        aria-label="Johann Jerman on Linkedin"
                         target="_blank"
                       >
                         <svg
@@ -137,7 +137,7 @@ export function CardIndex() {
                         className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
                         href="https://github.com/matiaschaves01"
                         rel="noopener"
-                        aria-label="Ariel Cerda on Github"
+                        aria-label="Matias Chaves on Github"
                         target="_blank"
                       >
                         <svg
@@ -154,7 +154,7 @@ export function CardIndex() {
                         className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
                         href="https://www.linkedin.com/in/matiaschaves/"
                         rel="noopener"
-                        aria-label="Ariel Cerda on Linkedin"
+                        aria-label="Matias Chaves on Linkedin"
                         target="_blank"
                       >
                         <svg
