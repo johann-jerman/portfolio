@@ -16,6 +16,9 @@ const navigation = [
   // { name: 'Calendar', href: '#', current: false },
   { name: 'Pokedex', href: '/pokedex', current: false },
   { name: 'Memotest', href: '/memotest', current: false },
+  { name: 'Dolar', href: '/dolarhoy', current: false },
+  { name: 'Todo', href: '/todo', current: false },
+  { name: 'Cumpleaños', href: '/cumple', current: false },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -152,10 +155,9 @@ export default function Home() {
               <Disclosure.Panel className="md:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                   {navigation.map((item) => (
-                    <Disclosure.Button
+                    <Link
                       key={item.name}
-                      as="a"
-                      href={item.href}
+                      to={item.href}
                       className={classNames(
                         item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                         'block rounded-md px-3 py-2 text-base font-medium'
@@ -163,10 +165,22 @@ export default function Home() {
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
-                    </Disclosure.Button>
+                    </Link>
+                    // <Disclosure.Button
+                    //   key={item.name}
+                    //   as="a"
+                    //   href={item.href}
+                    //   className={classNames(
+                    //     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    //     'block rounded-md px-3 py-2 text-base font-medium'
+                    //   )}
+                    //   aria-current={item.current ? 'page' : undefined}
+                    // >
+                    //   {item.name}
+                    // </Disclosure.Button>
                   ))}
                 </div>
-                <div className="border-t border-gray-700 pb-3 pt-4">
+                {/* <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
                     <div className="flex-shrink-0">
                       <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
@@ -196,7 +210,7 @@ export default function Home() {
                       </Disclosure.Button>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </Disclosure.Panel>
             </>
           )}
@@ -213,7 +227,6 @@ export default function Home() {
       </div>
       
     </>
-    
   )
 }
 
