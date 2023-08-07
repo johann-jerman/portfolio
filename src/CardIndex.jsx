@@ -13,12 +13,12 @@ export function CardIndex() {
                 src="/public/images/eljohan.jpg"
               />
               <div className="mt-2  text-center">
-                <h3 className="mb-1 text-2xl font-bold leading-normal text-gray-700">
+                <h3 className="mb-1 text-3xl font-bold leading-normal text-gray-700">
                   Johann Jerman
                 </h3>
                 <div className="flex flex-row justify-center w-full mx-auto space-x-2 text-center">
-                  <div className="text-sm font-bold tracking-wide text-gray-600 dark:text-gray-300 font-mono ">
-                    Diseñador UI / Front-end
+                  <div className="text-sm font-bold tracking-wide text-gray-600 dark:text-gray-700 font-mono ">
+                    Desarrollador Full Stack
                   </div>
                 </div>
                 <div className="w-full text-center">
@@ -26,7 +26,7 @@ export function CardIndex() {
                     <div className="flex space-x-2">
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
-                        href="https://www.github.com/Smilesharks"
+                        href="https://github.com/johann-jerman"
                         rel="noopener"
                         aria-label="Ariel Cerda on Github"
                         target="_blank"
@@ -43,7 +43,7 @@ export function CardIndex() {
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
-                        href="https://www.linkedin.com/in/arielcerdahernandez/"
+                        href="https://www.linkedin.com/in/johannjerman/"
                         rel="noopener"
                         aria-label="Ariel Cerda on Linkedin"
                         target="_blank"
@@ -122,12 +122,12 @@ export function CardIndex() {
               />
 
               <div className="mt-2  text-center">
-                <h3 className="mb-1 text-2xl font-bold leading-normal text-gray-700">
+                <h3 className="mb-1 text-3xl font-bold leading-normal text-gray-700">
                   Matias Chaves
                 </h3>
                 <div className="flex flex-row justify-center w-full mx-auto space-x-2 text-center">
-                  <div className="text-sm font-bold tracking-wide text-gray-600 dark:text-gray-300 font-mono ">
-                    Diseñador UI / Front-end
+                  <div className="text-sm font-bold tracking-wide text-gray-600 dark:text-gray-700 font-mono ">
+                  Desarrollador Full Stack
                   </div>
                 </div>
                 <div className="w-full text-center">
@@ -135,7 +135,7 @@ export function CardIndex() {
                     <div className="flex space-x-2">
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
-                        href="https://www.github.com/Smilesharks"
+                        href="https://github.com/matiaschaves01"
                         rel="noopener"
                         aria-label="Ariel Cerda on Github"
                         target="_blank"
@@ -152,7 +152,7 @@ export function CardIndex() {
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
-                        href="https://www.linkedin.com/in/arielcerdahernandez/"
+                        href="https://www.linkedin.com/in/matiaschaves/"
                         rel="noopener"
                         aria-label="Ariel Cerda on Linkedin"
                         target="_blank"
