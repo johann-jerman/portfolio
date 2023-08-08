@@ -1,20 +1,17 @@
-export function Card({title}) {
+import { deleteCard } from "./Utils";
+
+export function Card({id, text, onClick}) {
     return(
-        <article className="w-1/6 hover:shadow-md shadow-black rounded bg-white m-4 p-3">
-          <h5 className="text-center text-3xl">{title}</h5>
-          <p className="p-3">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-            veniam officia error at autem dignissimos deserunt ullam animi sint
-            numquam ab quasi expedita pariatur, aperiam corrupti, nihil illum
-            sunt magni? lore Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Assumenda, culpa atque asperiores quibusdam unde, placeat
-            optio neque nihil vero obcaecati vitae repellendus sit
-            exercitationem. Placeat ex voluptates labore qui tempora? Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            voluptas optio sint incidunt laudantium nobis reiciendis, eaque
-            aliquid rem nihil fugit corporis veniam impedit labore totam cumque
-            necessitatibus aut beatae!
-          </p>
+        <article className="w-1/6 hover:shadow-md flex shadow-black rounded bg-white m-4 ">
+          <div id={id} onClick={onClick} 
+          className="
+          fa-solid fa-trash
+          text-red-700 border-red-400 border-solid border rounded
+          w-1/6 p-1 flex justify-center items-center
+          "
+          ></div>
+          <p className="p-2 text-right h-auto w-auto">{text}</p>
         </article>
     )
 }
+
