@@ -1,9 +1,10 @@
 import React from "react";
 import "../src/index.css";
+import cvJohann from "../public/cv/CV-JohannJerman.pdf"
 export function CardIndex() {
   return (
     <>
-      <h1 className=" text-left text-2xl p-2 m-2">Desarrollado por:</h1>
+      {/* <h1 className=" text-center text-2xl p-2 m-2">Desarrollado por:</h1> */}
       <div className="container my-18 my mx-auto px-4 md:px-12">
         <div className="flex flex-wrap place-content-around -mx-1 lg:-mx-4">
           <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
@@ -51,17 +52,18 @@ export function CardIndex() {
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-cv focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-file-arrow-down text-2xl"
-                        href=""
+                        href={cvJohann}
                         rel="noopener"
                         aria-label="CV"
                         target="_blank"
+                        download={cvJohann}
                       ></a>
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-a-o focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-folder text-2xl"
-                        href=""
+                        href="https://liza-tdjy.onrender.com/"
                         rel="noopener"
-                        aria-label="Ariel Cerda on Youtube"
+                        aria-label="Portfolio Digital House"
                         target="_blank"
                       ></a>
                     </div>
