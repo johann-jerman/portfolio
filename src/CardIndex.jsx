@@ -1,8 +1,9 @@
 import React from "react";
-
+import "../src/index.css";
 export function CardIndex() {
   return (
     <>
+      <h1 className=" text-left text-2xl p-2 m-2">Desarrollado por:</h1>
       <div className="container my-18 my mx-auto px-4 md:px-12">
         <div className="flex flex-wrap place-content-around -mx-1 lg:-mx-4">
           <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
@@ -30,8 +31,7 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="Johann Jerman on Github"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-a-c focus:outline-none focus-visible:ring-2 ring-primary fa-brands fa-linkedin-in text-2xl"
@@ -39,8 +39,7 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="Johann Jerman on Linkedin"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-red-600 focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-envelope text-2xl"
@@ -48,8 +47,7 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="Ariel Cerda on Instagram"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-cv focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-file-arrow-down text-2xl"
@@ -57,8 +55,7 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="CV"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-a-o focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-folder text-2xl"
@@ -66,8 +63,7 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="Ariel Cerda on Youtube"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
                     </div>
                   </div>
                 </div>
@@ -76,8 +72,9 @@ export function CardIndex() {
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full px-6">
                     <p className="mb-4 font-light leading-relaxed text-gray-600 dark:text-gray-400">
-                      Actualmente incursionando en el hermoso mundo IT. 
-                    Trabajando y aprendiendo arduamente para poder cumplir, hoy, mi objetivo principal que es ser desarrollador web.
+                      Actualmente incursionando en el hermoso mundo IT.
+                      Trabajando y aprendiendo arduamente para poder cumplir,
+                      hoy, mi objetivo principal que es ser desarrollador web.
                     </p>
                   </div>
                 </div>
@@ -99,7 +96,7 @@ export function CardIndex() {
                 </h3>
                 <div className="flex flex-row justify-center w-full mx-auto space-x-2 text-center">
                   <div className="text-sm font-bold tracking-wide text-gray-600 dark:text-gray-700 font-mono ">
-                  Desarrollador Full Stack
+                    Desarrollador Full Stack
                   </div>
                 </div>
                 <div className="w-full text-center">
@@ -111,8 +108,7 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="Matias Chaves on Github"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-a-c focus:outline-none focus-visible:ring-2 ring-primary fa-brands fa-linkedin-in text-2xl"
@@ -120,17 +116,15 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="Matias Chaves on Linkedin"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
 
                       <a
-                          className="p-1 -m-1 text-gray-400 hover:text-red-600 focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-envelope text-2xl"
-                          href="mailto:matiaschaves01@gmail.com"
-                          rel="noopener"
-                          aria-label="Ariel Cerda on Instagram"
-                          target="_blank"
-                        >
-                      </a>
+                        className="p-1 -m-1 text-gray-400 hover:text-red-600 focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-envelope text-2xl"
+                        href="mailto:matiaschaves01@gmail.com"
+                        rel="noopener"
+                        aria-label="Ariel Cerda on Instagram"
+                        target="_blank"
+                      ></a>
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-cv focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-file-arrow-down text-2xl"
@@ -138,8 +132,7 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="Ariel Cerda on Youtube"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-a-o focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-folder text-2xl"
@@ -147,8 +140,7 @@ export function CardIndex() {
                         rel="noopener"
                         aria-label="Ariel Cerda on Youtube"
                         target="_blank"
-                      >
-                      </a>
+                      ></a>
                     </div>
                   </div>
                 </div>
@@ -157,7 +149,10 @@ export function CardIndex() {
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full px-6">
                     <p className="mb-4 font-light leading-relaxed text-gray-600 dark:text-gray-400">
-                    Aquí un entusiasta Desarrollador Web con ganas de afrontar nuevos desafíos, al que le gustaría formar parte de un equipo. Estoy entusiasmado por comenzar mi carrera profesional y contribuir con mi granito de arena.
+                      Aquí un entusiasta Desarrollador Web con ganas de afrontar
+                      nuevos desafíos, al que le gustaría formar parte de un
+                      equipo. Estoy entusiasmado por comenzar mi carrera
+                      profesional y contribuir con mi granito de arena.
                     </p>
                   </div>
                 </div>
