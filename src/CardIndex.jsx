@@ -1,6 +1,8 @@
 import React from "react";
 import "../src/index.css";
 import cvJohann from "../public/cv/CV-JohannJerman.pdf"
+import imageJohann from "../public/images/eljohan.jpg"
+import imageMatias from "../public/images/IMG_20230707_142331_494.jpg"
 export function CardIndex() {
   return (
     <>
@@ -12,7 +14,7 @@ export function CardIndex() {
               <img
                 alt="Placeholder"
                 className="block h-auto w-full"
-                src="/public/images/eljohan.jpg"
+                src={imageJohann}
               />
               <div className="mt-2  text-center">
                 <h3 className="mb-1 text-3xl font-bold leading-normal text-gray-700">
@@ -89,7 +91,7 @@ export function CardIndex() {
               <img
                 alt="Placeholder"
                 className="block h-auto w-full"
-                src="/public/images/IMG_20230707_142331_494.jpg"
+                src={imageMatias}
               />
 
               <div className="mt-2  text-center">
