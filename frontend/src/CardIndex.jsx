@@ -1,8 +1,9 @@
 import React from "react";
 import "../src/index.css";
-import cvJohann from "../public/cv/CV-JohannJerman.pdf"
-import imageJohann from "../public/images/eljohan.jpg"
-import imageMatias from "../public/images/IMG_20230707_142331_494.jpg"
+import cvJohann from "/cv/CV-JohannJerman.pdf"
+import cvMatias from "/cv/CV-Matias-Chaves.pdf"
+import imageJohann from "/images/eljohan.jpg"
+import imageMatias from "/images/IMG_20230707_142331_494.jpg"
 export function CardIndex() {
   return (
     <>
@@ -132,10 +133,11 @@ export function CardIndex() {
 
                       <a
                         className="p-1 -m-1 text-gray-400 hover:text-cv focus:outline-none focus-visible:ring-2 ring-primary fa-solid fa-file-arrow-down text-2xl"
-                        href=""
+                        href={cvMatias}
                         rel="noopener"
                         aria-label="Ariel Cerda on Youtube"
                         target="_blank"
+                        download={cvMatias}
                       ></a>
 
                       <a
